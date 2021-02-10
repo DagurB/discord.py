@@ -104,13 +104,7 @@ class Embed:
     Empty = EmptyEmbed
 
     def __init__(self, **kwargs):
-        # swap the colour/color aliases
-        try:
-            colour = kwargs['colour']
-        except KeyError:
-            colour = kwargs.get('color', EmptyEmbed)
-
-        self.colour = colour
+        self.colour = kwargs.get('color', EmptyEmbed)
         self.title = kwargs.get('title', EmptyEmbed)
         self.type = kwargs.get('type', 'rich')
         self.url = kwargs.get('url', EmptyEmbed)
